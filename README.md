@@ -1,4 +1,10 @@
-## GCCT(CT scan for jvm garbage collector)
+## GCCT(CT scanner for jvm garbage collector)
+
+### Feature
+
+- support g1 and cms.
+- outliers check.
+- period zoom out.
 
 ### Usage
 
@@ -29,7 +35,7 @@ java -jar gcct.jar -p /path/to/gc/log
   - commandline flags.
 - page 2: gc activity summary.
 
-![all](cms_all.png)
+![all](cms-with-data-all.png)
 
 If you want to take a closer look at one certain period of time, such as 0 to 5 sec, you can use the following command:
 
@@ -37,7 +43,7 @@ If you want to take a closer look at one certain period of time, such as 0 to 5 
 java -jar gcct.jar -p /path/to/gc/log -s 0 -e 5
 ```
 
-![0-5](cms_0-5.png)
+![0-5](cms-with-data-0-5.png)
 
 In addition to observe the states of the jvm from the charts, you can also view the details of the gc activity from the table on page 2, including some abnormal behavior, such as **Concurrent Mode Failure**, which often indicates a serious problem.
 

@@ -104,7 +104,7 @@ public class Jdk8G1Reporter implements Report {
             DynamicReports.report()
                 .setTemplate(Templates.reportTemplate)
                 .title(
-                    Templates.createTitleComponent("CT scan for garbage collector"),
+                    Templates.createTitleComponent("CT scanner for jvm garbage collector"),
                     memoryChart,
                     cmp.verticalGap(10),
                     cht.multiAxisChart()

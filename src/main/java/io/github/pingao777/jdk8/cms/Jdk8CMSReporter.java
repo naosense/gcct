@@ -32,7 +32,6 @@ import net.sf.dynamicreports.report.builder.component.Components;
 import net.sf.dynamicreports.report.builder.component.TextFieldBuilder;
 import net.sf.dynamicreports.report.constant.AxisPosition;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
-import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 import static io.github.pingao777.common.util.ReportUtils.avg;
@@ -108,7 +107,7 @@ public class Jdk8CMSReporter implements Report {
             DynamicReports.report()
                 .setTemplate(Templates.reportTemplate)
                 .title(
-                    Templates.createTitleComponent("CT scan for garbage collector"),
+                    Templates.createTitleComponent("CT scanner for jvm garbage collector"),
                     memoryChart,
                     cmp.verticalGap(10),
                     cht.multiAxisChart()
@@ -128,7 +127,7 @@ public class Jdk8CMSReporter implements Report {
                 .pageFooter(Templates.footerComponent)
                 .setDataSource(datasource.get("summary"))
                 .show();
-        } catch (DRException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
